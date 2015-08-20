@@ -13,3 +13,7 @@ docker build -t spark-worker:0.1 .
 # spark-client
 cd ./../spark-shell
 docker build -t spark-client:0.1 .
+
+# jobserver
+cd ./../spark-jobserver
+docker build -t spark-jobserver:0.1 .
