@@ -3,8 +3,11 @@ cd ${SPARK_HOME}
 export SPARK_LOCAL_IP=`awk 'NR==1 {print $1}' /etc/hosts`
 
 # env variables generated via the --link flag in docker
+# Note - linked container should be named 'spark-master'. env variables are based on that
 MASTER_PORT=${SPARK_MASTER_ENV_SPARK_MASTER_PORT}
-MASTER_ADDRESS="SPARK_MASTER_PORT_${MASTER_PORT}_TCP_ADDR"
+# Note - 7077 should be resolved via the ${MASTER_PORT}. However,my double substition were failing. Hence,hardcoded
+MASTER_ADDRESS=${SPARK_MASTER_PORT_7077_TCP_ADDR}
+
 
 ./bin/spark-class org.apache.spark.deploy.worker.Worker \
 	spark://${MASTER_ADDRESS}:${MASTER_PORT} \
@@ -23,6 +26,6 @@ do
 	else
 		# java process must have died,so should the container.
 		break;	
-	done;	
+	fi	
 done		
 

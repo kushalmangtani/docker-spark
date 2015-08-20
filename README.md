@@ -1,6 +1,8 @@
 Docker container for spark stand alone cluster
 =================================
 
+This repo is a customized fork of [epahomov/docker-spark](https://github.com/epahomov/docker-spark)
+
 This repository contains a set of scripts and configuration files to run a [Apache Spark](https://spark.apache.org/) standalone cluster from [Docker](https://www.docker.io/) container.
 
 To run master execute:

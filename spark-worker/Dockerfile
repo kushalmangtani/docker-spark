@@ -1,4 +1,4 @@
-FROM spark-base:latest
+FROM spark-base:0.1
 MAINTAINER Kushal Mangtani <kushal.mangtani@viasat.com>
 
 # Add the start-master script

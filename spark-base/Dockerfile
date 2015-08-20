@@ -7,8 +7,8 @@ RUN apt-get update && apt-get install -y wget curl git python-pip openjdk-7-jdk 
 # Install Spark
 # Using a 'spark-without-hadoop' dist
 ENV SPARK_VERSION 1.4.1
-RUN curl -s http://www.apache.org/dist/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-without-hadoop.tgz | tar -zx -C /usr/local/
-RUN (cd /usr/local && ln -s spark-1.4.1-bin-without-hadoop spark)
+RUN curl -s http://www.apache.org/dist/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop2.6.tgz | tar -zx -C /usr/local/
+RUN (cd /usr/local && ln -s spark-${SPARK_VERSION}-bin-hadoop2.6 spark)
 ENV SPARK_HOME /usr/local/spark
 
 # spark-default.conf

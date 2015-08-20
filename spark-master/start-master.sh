@@ -14,7 +14,7 @@ do
 		# sleep for 5 sec and check again!	
 		sleep 5 
 	else
-		break;	
-	done;	
+		break;
+	fi	
 done		
 
