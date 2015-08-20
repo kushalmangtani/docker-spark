@@ -32,4 +32,5 @@ ENV SPARK_JOBSERVER_VERSION 0.5.2
 
 # startup script
 COPY jobserver_start.sh /app/jobserver_start.sh
+#ENTRYPOINT bash
 CMD ["/app/jobserver_start.sh"]
